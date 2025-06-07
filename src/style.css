@@ -1,0 +1,244 @@
+/* Google Fonts 임포트: Montserrat (로고/제목), Noto Sans KR (본문) */
+/* Pretendard는 별도 CDN을 사용하거나 직접 다운로드하여 프로젝트에 포함해야 할 수 있습니다. */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Noto+Sans+KR:wght@400;500;700&display=swap');
+
+/* 기본 설정 */
+:root {
+    --main-blue: #1687C9; /* 지성 & 기술 */
+    --sub-blue: #005F85;  /* 감성 & 균형 */
+    --light-blue: #D4F0FF; /* 배경 톤 */
+    --white: #FFFFFF;     /* 연꽃 화이트 */
+    --gray: #444444;      /* 대비용 그레이 */
+}
+
+body {
+    font-family: 'Noto Sans KR', 'Apple SD Gothic Neo', sans-serif; /* 브랜드 본문용 서체 */
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    color: var(--gray);
+    background-color: var(--white);
+    overflow-x: hidden; /* 가로 스크롤 방지 */
+}
+
+a {
+    text-decoration: none;
+    color: var(--main-blue);
+}
+
+/* 헤더 */
+.main-header {
+    background-color: var(--white);
+    border-bottom: 1px solid #eee;
+    padding: 15px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.logo-area {
+    display: flex;
+    align-items: center;
+}
+
+.main-logo {
+    height: 60px; /* 40px -> 60px로 변경. 로고 크기 조정 */
+    margin-right: 10px;
+}
+
+.logo-area h1 {
+    font-family: 'Montserrat', sans-serif; /* 로고 텍스트용 서체 */
+    font-size: 24px;
+    color: var(--sub-blue);
+    margin: 0;
+}
+
+.main-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.main-nav ul li {
+    margin-left: 30px;
+}
+
+.main-nav ul li a {
+    font-weight: 500;
+    color: var(--gray);
+    transition: color 0.3s ease;
+}
+
+.main-nav ul li a:hover {
+    color: var(--main-blue);
+}
+
+/* 히어로 섹션 */
+.hero-section {
+    background-color: var(--light-blue); /* 배경 톤 라이트 블루 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 80px 20px;
+    flex-wrap: wrap; /* 반응형을 위해 추가 */
+    min-height: 450px; /* 최소 높이 설정 */
+    gap: 40px; /* 텍스트와 이미지 사이 간격 */
+}
+
+.hero-text {
+    text-align: center;
+    max-width: 600px;
+}
+
+.hero-text h2 {
+    font-family: 'Montserrat', sans-serif; /* 로고 텍스트용 서체 */
+    font-size: 48px;
+    color: var(--sub-blue);
+    margin-bottom: 20px;
+}
+
+.hero-text p {
+    font-size: 18px;
+    color: var(--gray);
+}
+
+.hero-character img {
+    max-width: 300px; /* 앤디 캐릭터 이미지 크기 조정 */
+    height: auto;
+    animation: bounce 2s infinite ease-in-out; /* 간단한 애니메이션 추가 */
+    filter: drop-shadow(5px 5px 10px rgba(0,0,0,0.2)); /* 그림자 효과 추가 */
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* 주요 사업 분야 섹션 */
+.business-areas {
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.business-areas h3 {
+    font-family: 'Montserrat', sans-serif; /* 로고 텍스트용 서체 */
+    font-size: 36px;
+    color: var(--sub-blue);
+    margin-bottom: 40px;
+}
+
+.area-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* 반응형 그리드 */
+    gap: 30px;
+}
+
+.business-card {
+    background-color: var(--white);
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex; /* 내부 요소 정렬 */
+    flex-direction: column; /* 세로 방향으로 정렬 */
+    justify-content: space-between; /* 내용 분배 */
+    align-items: center; /* 가운데 정렬 */
+}
+
+.business-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+.business-card img {
+    max-width: 80px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.business-card h4 {
+    font-family: 'Pretendard SemiBold', 'Noto Sans KR', sans-serif; /* 로고 텍스트용 서체 (Pretendard) */
+    font-size: 22px;
+    color: var(--main-blue);
+    margin-bottom: 15px;
+}
+
+.business-card p {
+    font-size: 16px;
+    line-height: 1.7;
+    margin-bottom: 25px;
+    flex-grow: 1; /* 단락이 공간을 채우도록 */
+}
+
+.btn-more {
+    display: inline-block;
+    background-color: var(--main-blue);
+    color: var(--white);
+    padding: 10px 25px;
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn-more:hover {
+    background-color: var(--sub-blue);
+}
+
+/* 푸터 */
+.main-footer {
+    background-color: var(--gray);
+    color: var(--white);
+    text-align: center;
+    padding: 30px 0;
+    font-size: 14px;
+}
+
+.main-footer p {
+    margin: 5px 0;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+    }
+    .main-nav ul {
+        margin-top: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .main-nav ul li {
+        margin: 0 15px 10px 15px;
+    }
+    .hero-section {
+        flex-direction: column;
+        padding: 50px 20px;
+        text-align: center;
+    }
+    .hero-text {
+        margin-right: 0;
+        margin-bottom: 30px;
+    }
+    .hero-text h2 {
+        font-size: 36px;
+    }
+    .area-grid {
+        grid-template-columns: 1fr;
+    }
+}
