@@ -1,5 +1,4 @@
-/* Google Fonts 임포트: Montserrat (로고/제목), Noto Sans KR (본문) */
-/* Pretendard는 별도 CDN을 사용하거나 직접 다운로드하여 프로젝트에 포함해야 할 수 있습니다. */
+/* Google Fonts 임포트 */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Noto+Sans+KR:wght@400;500;700&display=swap');
 
 /* 기본 설정 */
@@ -49,12 +48,12 @@ a {
 }
 
 .main-logo {
-    height: 60px; /* 40px -> 60px로 변경. 로고 크기 조정 */
+    height: 60px; /* 로고 크기 조정 */
     margin-right: 10px;
 }
 
 .logo-area h1 {
-    font-family: 'Montserrat', sans-serif; /* 로고 텍스트용 서체 */
+    font-family: 'Montserrat', sans-serif;
     font-size: 24px;
     color: var(--sub-blue);
     margin: 0;
@@ -81,16 +80,16 @@ a {
     color: var(--main-blue);
 }
 
-/* 히어로 섹션 */
+/* 히어로 섹션 (메인 페이지) */
 .hero-section {
-    background-color: var(--light-blue); /* 배경 톤 라이트 블루 */
+    background-color: var(--light-blue);
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 80px 20px;
-    flex-wrap: wrap; /* 반응형을 위해 추가 */
-    min-height: 450px; /* 최소 높이 설정 */
-    gap: 40px; /* 텍스트와 이미지 사이 간격 */
+    flex-wrap: wrap;
+    min-height: 450px;
+    gap: 40px;
 }
 
 .hero-text {
@@ -99,7 +98,7 @@ a {
 }
 
 .hero-text h2 {
-    font-family: 'Montserrat', sans-serif; /* 로고 텍스트용 서체 */
+    font-family: 'Montserrat', sans-serif;
     font-size: 48px;
     color: var(--sub-blue);
     margin-bottom: 20px;
@@ -111,10 +110,10 @@ a {
 }
 
 .hero-character img {
-    max-width: 300px; /* 앤디 캐릭터 이미지 크기 조정 */
+    max-width: 300px;
     height: auto;
-    animation: bounce 2s infinite ease-in-out; /* 간단한 애니메이션 추가 */
-    filter: drop-shadow(5px 5px 10px rgba(0,0,0,0.2)); /* 그림자 효과 추가 */
+    animation: bounce 2s infinite ease-in-out;
+    filter: drop-shadow(5px 5px 10px rgba(0,0,0,0.2));
 }
 
 @keyframes bounce {
@@ -126,7 +125,7 @@ a {
     }
 }
 
-/* 주요 사업 분야 섹션 */
+/* 주요 사업 분야 섹션 (메인 페이지) */
 .business-areas {
     max-width: 1200px;
     margin: 60px auto;
@@ -135,7 +134,7 @@ a {
 }
 
 .business-areas h3 {
-    font-family: 'Montserrat', sans-serif; /* 로고 텍스트용 서체 */
+    font-family: 'Montserrat', sans-serif;
     font-size: 36px;
     color: var(--sub-blue);
     margin-bottom: 40px;
@@ -143,7 +142,7 @@ a {
 
 .area-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* 반응형 그리드 */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
 }
 
@@ -154,10 +153,10 @@ a {
     padding: 30px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.08);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    display: flex; /* 내부 요소 정렬 */
-    flex-direction: column; /* 세로 방향으로 정렬 */
-    justify-content: space-between; /* 내용 분배 */
-    align-items: center; /* 가운데 정렬 */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .business-card:hover {
@@ -172,7 +171,7 @@ a {
 }
 
 .business-card h4 {
-    font-family: 'Pretendard SemiBold', 'Noto Sans KR', sans-serif; /* 로고 텍스트용 서체 (Pretendard) */
+    font-family: 'Pretendard SemiBold', 'Noto Sans KR', sans-serif;
     font-size: 22px;
     color: var(--main-blue);
     margin-bottom: 15px;
@@ -182,7 +181,7 @@ a {
     font-size: 16px;
     line-height: 1.7;
     margin-bottom: 25px;
-    flex-grow: 1; /* 단락이 공간을 채우도록 */
+    flex-grow: 1;
 }
 
 .btn-more {
@@ -213,32 +212,156 @@ a {
     margin: 5px 0;
 }
 
+/* About Page Specific Styles - 대폭 수정 */
+.about-page-main {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.about-section {
+    display: flex;
+    align-items: center; /* 중앙 정렬로 변경 */
+    gap: 50px;
+    margin-bottom: 80px; /* 섹션 간 여백 증가 */
+    padding: 50px 0; /* 섹션 내부 패딩 증가 */
+    flex-wrap: wrap;
+    position: relative; /* z-index를 위해 추가 */
+}
+
+/* 섹션 2에만 파란색 배경 적용 */
+.about-section.philosophy-section {
+    background-color: var(--light-blue);
+    padding: 80px 20px; /* 배경색 있는 섹션은 패딩 더 넓게 */
+    margin: 60px -20px; /* 좌우로 확장, about-page-main의 padding과 상쇄 */
+}
+
+/* 짝수 섹션은 이미지와 텍스트 위치 반전 */
+.about-section:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.about-text-content {
+    flex: 1;
+    min-width: 300px;
+    text-align: left; /* 기본 좌측 정렬 */
+}
+
+.about-text-content h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 38px;
+    color: var(--sub-blue);
+    margin-bottom: 10px; /* 제목 아래 여백 감소 */
+}
+
+.about-text-content h3 {
+    font-family: 'Pretendard SemiBold', 'Noto Sans KR', sans-serif;
+    font-size: 24px;
+    color: var(--main-blue);
+    margin-bottom: 30px; /* 부제목 아래 여백 증가 */
+    line-height: 1.4;
+    white-space: nowrap; /* 제목 줄 바꿈 방지 */
+    overflow: hidden; /* 넘치면 숨김 */
+    text-overflow: ellipsis; /* 넘치면 ... 표시 */
+}
+
+.about-text-content p {
+    font-size: 17px;
+    line-height: 1.8;
+    margin-bottom: 15px;
+    text-align: left; /* 좌측 정렬로 통일 */
+}
+
+.about-text-content ul {
+    list-style: disc inside;
+    padding-left: 20px;
+    font-size: 16px;
+    line-height: 1.7;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.about-text-content ul li {
+    margin-bottom: 8px;
+}
+
+.about-text-content ul li strong {
+    color: var(--sub-blue);
+    font-weight: normal; /* 강조 효과 제거 */
+}
+
+.about-image-content {
+    flex: 0 0 400px; /* 고정 너비 설정 */
+    max-width: 100%;
+    text-align: center;
+    /* order: -1; 이미지를 항상 왼쪽으로 옮기려면 주석 해제, 아니면 각 섹션별로 제어 */
+}
+
+/* 이미지와 비디오 모두에 적용되는 스타일 */
+.about-image-content img,
+.about-image-content video {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    display: block;
+    margin: 0 auto;
+    transition: transform 0.3s ease;
+}
+
+/* 비디오 특정 스타일 - 자동 재생 시 호버 효과가 어색할 수 있으므로 제거 */
+.about-image-content video:hover {
+    transform: none;
+}
+
+
+/* Home 페이지 내비게이션 링크 활성화 색상 */
+.main-nav ul li a[href="/about.html"] {
+    color: var(--main-blue);
+    font-weight: bold;
+}
+
 /* 반응형 디자인 */
-@media (max-width: 768px) {
-    .header-content {
+@media (max-width: 992px) {
+    .about-section {
         flex-direction: column;
-    }
-    .main-nav ul {
-        margin-top: 15px;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-    .main-nav ul li {
-        margin: 0 15px 10px 15px;
-    }
-    .hero-section {
-        flex-direction: column;
-        padding: 50px 20px;
+        align-items: center;
         text-align: center;
     }
-    .hero-text {
-        margin-right: 0;
+    .about-section:nth-child(even) {
+        flex-direction: column; /* 짝수 섹션도 세로로 나열 */
+    }
+    .about-text-content, .about-image-content {
+        flex: none;
+        width: 100%;
+        max-width: 600px;
+    }
+    .about-image-content {
+        order: -1; /* 이미지를 텍스트 위로 올림 */
         margin-bottom: 30px;
     }
-    .hero-text h2 {
-        font-size: 36px;
+    .about-text-content p, .about-text-content ul {
+        text-align: left; /* 작은 화면에서 좌측 정렬 */
     }
-    .area-grid {
-        grid-template-columns: 1fr;
+    .about-section.philosophy-section {
+        margin: 60px -20px; /* 모바일에서도 좌우 확장 유지 */
+    }
+}
+
+@media (max-width: 768px) {
+    .about-text-content h2 {
+        font-size: 32px;
+    }
+    .about-text-content h3 {
+        font-size: 20px;
+    }
+    .about-text-content p {
+        font-size: 15px;
+    }
+    .about-section {
+        padding: 40px 0;
+    }
+    .about-section.philosophy-section {
+        padding: 50px 20px; /* 모바일에서 패딩 조정 */
     }
 }
